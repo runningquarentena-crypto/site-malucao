@@ -1,22 +1,27 @@
-name: Deploy to HostGator via FTP
+name: Deploy to Render (Disabled - Using Render Native Integration)
 
-on:
-  push:
-    branches: [ main ]
+# Este workflow foi desabilitado.
+# Render faz deploy automático quando conectado ao repositório GitHub.
+# Para ativar deploy manual via FTP (HostGator), descomente a seção abaixo.
 
-jobs:
-  ftp-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+# on:
+#   push:
+#     branches: [ main ]
+#
+# jobs:
+#   ftp-deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v4
+#
+#       - name: Deploy via FTP
+#         uses: SamKirkland/FTP-Deploy-Action@4.3.0
+#         with:
+#           server: ${{ secrets.FTP_HOST }}
+#           username: ${{ secrets.FTP_USERNAME }}
+#           password: ${{ secrets.FTP_PASSWORD }}
+#           port: 21
+#           local-dir: ./
+#           server-dir: ${{ secrets.FTP_REMOTE_DIR }}
 
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 21
-          local-dir: ./
-          server-dir: ${{ secrets.FTP_REMOTE_DIR }}

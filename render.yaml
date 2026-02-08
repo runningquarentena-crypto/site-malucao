@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: site-malucao
+    env: static
+    buildCommand: echo "Build complete"
+    staticPublishPath: ./
+    envVars:
+      - key: NODE_ENV
+        value: production
